@@ -44,7 +44,6 @@ class MainActivity : ComponentActivity() {
                 val context = LocalContext.current
                 val viewModel = viewModel<SendMailViewModel>()
                 val state = viewModel.state
-                Log.d("TAG", "onCreate: AutomaticSendMailTheme ${state} ")
 
                 val defaultPreferences = DefaultPreferences(
                     context.getSharedPreferences(Preference.SHAREDPREFERENCES,
@@ -66,7 +65,6 @@ class MainActivity : ComponentActivity() {
                         when(event){
                             is SendMailViewModel.ValidationEvent.Success->{
                                 val state = viewModel.state
-                                Log.d("TAG", "onCreate: ValidationEvent.Success ${state} ")
                                 val constraints = Constraints.Builder()
                                     .setRequiredNetworkType(NetworkType.CONNECTED)
                                     .setRequiresBatteryNotLow(true)
